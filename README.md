@@ -58,30 +58,24 @@ Copy lives as plain JavaScript constants at the top of each section component. N
 
 All copy is written in second person ("You're running..."). Keep it that way.
 
-## Swapping the Calendly URL and email
+## Booking mode — email-first (the default)
 
-Both live in **`src/lib/site-config.ts`** as the single source of truth. Every CTA on the site reads from these constants.
+The Hero and Final CTA buttons currently open a pre-filled email to `dameon.lutz@gmail.com` with subject "Discovery call — Fractional COO". The footer email link does the same without the pre-filled subject. No third-party scheduling tool is wired up.
 
-```ts
-export const siteConfig = {
-  name: "Dr. Dameon Lutz",
-  email: "dameon.lutz@gmail.com",
-  linkedin: "https://www.linkedin.com/in/dameon-l-95b5a558/",
-  calendlyUrl: "[CALENDLY_URL]",   // ← replace before launch
-  // ...
-};
-```
+**Editing the email address** — change `email` in [`src/lib/site-config.ts`](src/lib/site-config.ts). One edit updates every email link on the site.
 
-**To swap in the real Calendly URL:**
+**Editing the pre-filled subject** — change `emailSubject` in the same file.
 
-1. Grab your Calendly event link (e.g., `https://calendly.com/dameonlutz/discovery-call`)
-2. Replace `"[CALENDLY_URL]"` in `src/lib/site-config.ts`
-3. Commit and push
+## Switching to Calendly later
 
-Where the constants are used:
+When you're ready for real scheduling:
 
-- **`calendlyUrl`** — Hero CTA button, Final CTA button
-- **`email`** — Final CTA inline link (with "Discovery call" subject pre-filled via `mailtoHref`), footer email link (plain mailto)
+1. Create your Calendly event (30-minute discovery call)
+2. Copy the event URL (e.g., `https://calendly.com/dameonlutz/discovery-call`)
+3. In `src/lib/site-config.ts`, replace `"[CALENDLY_URL]"` with the real URL
+4. In `src/components/sections/hero.tsx`, change the Button `render` prop from `<a href={mailtoHref} />` to `<a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer" />` (you'll also need to swap the import: `import { siteConfig } from "@/lib/site-config"`)
+5. Same swap in `src/components/sections/final-cta.tsx`
+6. Commit and push. The email fallback on the Final CTA can stay — it's a good courtesy option.
 
 ## Toggles and placeholders
 

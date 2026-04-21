@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/site-config";
+import { mailtoHref } from "@/lib/site-config";
 
 const copy = {
   eyebrow: "Dr. Dameon Lutz · Fractional COO",
   headline: "Your operations have outgrown you.",
   subhead:
     "Fractional Chief Operating Officer for charter schools, nonprofits, and mission-driven organizations between $2M and $30M in revenue — embedded leadership without the full-time hire.",
-  cta: "Book a 30-minute discovery call",
+  cta: "Email me to book a call",
   trustSignal:
     "DBA · Ed.D. · 10+ years building operational backbones for mission-driven organizations.",
 };
@@ -34,13 +34,7 @@ export function Hero() {
           <Button
             size="lg"
             className="h-12 px-7 text-base"
-            render={
-              <a
-                href={siteConfig.calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              />
-            }
+            render={<a href={mailtoHref} />}
           >
             {copy.cta}
           </Button>

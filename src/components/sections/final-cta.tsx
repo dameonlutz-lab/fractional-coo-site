@@ -5,8 +5,7 @@ const copy = {
   headline: "The next twelve months are going to happen either way.",
   subhead:
     "Thirty minutes to find out whether I'm the right person to help you steer them. No pitch, no pressure — and if I'm not a fit, I'll tell you who might be.",
-  primaryCta: "Book a 30-minute discovery call",
-  secondaryPrefix: "Prefer to write first? Email me at",
+  primaryCta: "Email me to book a call",
 };
 
 export function FinalCta() {
@@ -25,19 +24,13 @@ export function FinalCta() {
           <Button
             size="lg"
             className="h-12 px-7 text-base"
-            render={
-              <a
-                href={siteConfig.calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              />
-            }
+            render={<a href={mailtoHref} />}
           >
             {copy.primaryCta}
           </Button>
 
           <p className="text-[0.95rem] leading-relaxed text-muted-foreground">
-            {copy.secondaryPrefix}{" "}
+            Or write directly to{" "}
             <a
               href={mailtoHref}
               className="font-medium text-foreground underline underline-offset-[3px] decoration-foreground/30 hover:decoration-foreground"
