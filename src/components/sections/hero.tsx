@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { siteConfig, mailtoHref } from "@/lib/site-config";
+import { siteConfig, mailtoHref, gmailComposeHref } from "@/lib/site-config";
 
 const copy = {
   eyebrow: "Dr. Dameon Lutz · Fractional COO",
@@ -34,7 +34,13 @@ export function Hero() {
           <Button
             size="lg"
             className="h-12 px-7 text-base"
-            render={<a href={mailtoHref} />}
+            render={
+              <a
+                href={gmailComposeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
           >
             {copy.cta}
           </Button>

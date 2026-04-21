@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { siteConfig, mailtoHref } from "@/lib/site-config";
+import { siteConfig, mailtoHref, gmailComposeHref } from "@/lib/site-config";
 
 const copy = {
   headline: "The next twelve months are going to happen either way.",
@@ -24,7 +24,13 @@ export function FinalCta() {
           <Button
             size="lg"
             className="h-12 px-7 text-base"
-            render={<a href={mailtoHref} />}
+            render={
+              <a
+                href={gmailComposeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
           >
             {copy.primaryCta}
           </Button>

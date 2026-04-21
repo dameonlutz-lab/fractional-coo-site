@@ -58,11 +58,13 @@ Copy lives as plain JavaScript constants at the top of each section component. N
 
 All copy is written in second person ("You're running..."). Keep it that way.
 
-## Booking mode — email-first (the default)
+## Booking mode — Gmail compose (the current default)
 
-The Hero and Final CTA buttons currently open a pre-filled email to `dameon.lutz@gmail.com` with subject "Discovery call — Fractional COO". The footer email link does the same without the pre-filled subject. No third-party scheduling tool is wired up.
+The Hero and Final CTA primary buttons open **Gmail's web compose window** in a new tab, pre-filled with `dameon.lutz@gmail.com` and subject "Discovery call — Fractional COO". This works reliably regardless of the visitor's OS or default mail handler — no mailto configuration required.
 
-**Editing the email address** — change `email` in [`src/lib/site-config.ts`](src/lib/site-config.ts). One edit updates every email link on the site.
+The visible email-address fallback links (under the Hero button, under the Final CTA button, and in the footer) use standard `mailto:` so visitors who prefer their native mail app (Outlook, Apple Mail) still get it when clicking the text link directly.
+
+**Editing the email address** — change `email` in [`src/lib/site-config.ts`](src/lib/site-config.ts). One edit updates every link on the site — both the Gmail compose URL and the mailto links.
 
 **Editing the pre-filled subject** — change `emailSubject` in the same file.
 
@@ -73,9 +75,9 @@ When you're ready for real scheduling:
 1. Create your Calendly event (30-minute discovery call)
 2. Copy the event URL (e.g., `https://calendly.com/dameonlutz/discovery-call`)
 3. In `src/lib/site-config.ts`, replace `"[CALENDLY_URL]"` with the real URL
-4. In `src/components/sections/hero.tsx`, change the Button `render` prop from `<a href={mailtoHref} />` to `<a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer" />` (you'll also need to swap the import: `import { siteConfig } from "@/lib/site-config"`)
+4. In `src/components/sections/hero.tsx`, change the Button `render` prop from `href={gmailComposeHref}` to `href={siteConfig.calendlyUrl}`
 5. Same swap in `src/components/sections/final-cta.tsx`
-6. Commit and push. The email fallback on the Final CTA can stay — it's a good courtesy option.
+6. Commit and push. The email-address fallback lines can stay — they're a good courtesy option for prospects who prefer email.
 
 ## Toggles and placeholders
 
