@@ -2,8 +2,10 @@
 
 One-page marketing site for Dr. Dameon Lutz's fractional COO practice, serving charter schools and nonprofits ($2M – $30M). Single goal: move visitors toward booking a 30-minute discovery call.
 
-- **Live:** https://dameonlutz.pages.dev
+- **Live:** https://fractional-coo-site.pages.dev
 - **Repo:** https://github.com/dameonlutz-lab/fractional-coo-site
+
+The `.pages.dev` URL is a temporary placeholder. When you buy a real domain, it becomes the canonical URL and this one recedes into the background (it keeps working as a fallback). See "Adding a custom domain" below.
 
 ## Stack
 
