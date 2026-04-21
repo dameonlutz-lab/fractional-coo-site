@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { mailtoHref } from "@/lib/site-config";
+import { siteConfig, mailtoHref } from "@/lib/site-config";
 
 const copy = {
   eyebrow: "Dr. Dameon Lutz · Fractional COO",
@@ -38,6 +38,15 @@ export function Hero() {
           >
             {copy.cta}
           </Button>
+          <p className="text-sm text-muted-foreground">
+            Or write directly to{" "}
+            <a
+              href={mailtoHref}
+              className="font-medium text-foreground underline underline-offset-[3px] decoration-foreground/30 hover:decoration-foreground"
+            >
+              {siteConfig.email}
+            </a>
+          </p>
           <p className="text-sm text-muted-foreground">{copy.trustSignal}</p>
         </div>
       </div>
