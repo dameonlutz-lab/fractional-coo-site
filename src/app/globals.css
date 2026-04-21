@@ -44,7 +44,7 @@
   --secondary: oklch(0.95 0.008 85);           /* subtle warm gray */
   --secondary-foreground: oklch(0.26 0.06 255);
   --muted: oklch(0.95 0.008 85);
-  --muted-foreground: oklch(0.48 0.02 255);   /* readable slate */
+  --muted-foreground: oklch(0.42 0.02 255);   /* readable slate — AA-safe on cream */
   --accent: oklch(0.72 0.12 85);              /* warm gold — decorative only */
   --accent-foreground: oklch(0.22 0.03 255);
   --destructive: oklch(0.577 0.245 27.325);
