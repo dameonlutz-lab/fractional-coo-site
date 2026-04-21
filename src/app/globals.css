@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-display);
+  --font-heading: var(--font-display);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  /* Warm neutrals + deep navy + muted gold accent.
+     Matches the one-pager PDF aesthetic: navy headers, gold rules. */
+  --background: oklch(0.985 0.004 85);        /* warm cream */
+  --foreground: oklch(0.22 0.03 255);         /* deep navy-charcoal */
+  --card: oklch(1 0 0);                        /* pure white */
+  --card-foreground: oklch(0.22 0.03 255);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.03 255);
+  --primary: oklch(0.26 0.06 255);            /* deep navy — CTA buttons */
+  --primary-foreground: oklch(0.985 0.004 85);
+  --secondary: oklch(0.95 0.008 85);           /* subtle warm gray */
+  --secondary-foreground: oklch(0.26 0.06 255);
+  --muted: oklch(0.95 0.008 85);
+  --muted-foreground: oklch(0.48 0.02 255);   /* readable slate */
+  --accent: oklch(0.72 0.12 85);              /* warm gold — decorative only */
+  --accent-foreground: oklch(0.22 0.03 255);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.90 0.008 85);
+  --input: oklch(0.90 0.008 85);
+  --ring: oklch(0.26 0.06 255);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight;
+    font-feature-settings: "ss01", "ss02";
+  }
+}
