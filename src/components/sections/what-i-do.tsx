@@ -4,7 +4,6 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 
 const copy = {
@@ -72,13 +71,16 @@ export function WhatIDo() {
             return (
               <Card key={offer.name} className="gap-5 py-7">
                 <CardHeader className="px-7">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md border border-border bg-background text-primary">
+                  <div
+                    aria-hidden="true"
+                    className="mb-4 flex h-10 w-10 items-center justify-center rounded-md border border-border bg-background text-primary"
+                  >
                     <Icon className="h-5 w-5" strokeWidth={1.75} />
                   </div>
                   <div className="flex items-baseline justify-between gap-3">
-                    <CardTitle className="font-serif text-xl font-medium tracking-tight text-foreground">
+                    <h3 className="font-serif text-xl font-medium leading-snug tracking-tight text-foreground">
                       {offer.name}
-                    </CardTitle>
+                    </h3>
                     <span className="whitespace-nowrap text-sm font-medium text-foreground">
                       {offer.priceAnchor}
                     </span>

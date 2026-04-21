@@ -47,7 +47,10 @@ export function Problem() {
             const Icon = pain.icon;
             return (
               <div key={pain.title} className="flex flex-col gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-background text-primary">
+                <div
+                  aria-hidden="true"
+                  className="flex h-10 w-10 items-center justify-center rounded-md border border-border bg-background text-primary"
+                >
                   <Icon className="h-5 w-5" strokeWidth={1.75} />
                 </div>
                 <h3 className="font-serif text-xl font-medium leading-snug tracking-tight text-foreground">
